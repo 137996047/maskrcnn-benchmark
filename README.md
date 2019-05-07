@@ -105,6 +105,12 @@ You can also create a new `paths_catalog.py` file which implements the same two 
 and pass it as a config argument `PATHS_CATALOG` during training.
 
 ### Single GPU training
+#### if CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'
+Functions are not exported by default to be made available in subshells. I'd recommend you do:
+```
+source ~/anaconda3/etc/profile.d/conda.sh
+conda activate my_env
+```
 
 Most of the configuration files that we provide assume that we are running on 8 GPUs.
 In order to be able to run it on fewer GPUs, there are a few possibilities:
