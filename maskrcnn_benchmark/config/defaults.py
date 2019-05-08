@@ -40,7 +40,10 @@ _C.MODEL.WEIGHT = ""
 # -----------------------------------------------------------------------------
 _C.INPUT = CN()
 # Size of the smallest side of the image during training  
-# In maskrcnn-benchmark/maskrcnn_benchmark/data/transforms/build.py function: T.Resize(min_size, max_size)
+# In maskrcnn-benchmark/maskrcnn_benchmark/data/transforms/build.py 
+# code: T.Resize(min_size, max_size)
+# MIN_SIZE_TRAIN is image height length
+# MAX_SIZE_TRAIN is image width length
 _C.INPUT.MIN_SIZE_TRAIN = (800,)  # (800,)
 # Maximum size of the side of the image during training
 _C.INPUT.MAX_SIZE_TRAIN = 1333
@@ -48,6 +51,7 @@ _C.INPUT.MAX_SIZE_TRAIN = 1333
 _C.INPUT.MIN_SIZE_TEST = 800
 # Maximum size of the side of the image during testing
 _C.INPUT.MAX_SIZE_TEST = 1333
+
 # Values to be used for image normalization
 _C.INPUT.PIXEL_MEAN = [102.9801, 115.9465, 122.7717]
 # Values to be used for image normalization
@@ -61,6 +65,10 @@ _C.INPUT.CONTRAST = 0.0
 _C.INPUT.SATURATION = 0.0
 _C.INPUT.HUE = 0.0
 
+# Image RandomHorizontalFlip
+# maskrcnn-benchmark/maskrcnn_benchmark/data/transforms/build.py 
+# default code: flip_prob = 0.5  # cfg.INPUT.FLIP_PROB_TRAIN  need we modify it
+_C.INPUT.FLIP_PROB_TRAIN = 0.0
 
 # -----------------------------------------------------------------------------
 # Dataset
