@@ -139,6 +139,7 @@ _C.MODEL.RPN.USE_FPN = False
 # Base RPN anchor sizes given in absolute pixels w.r.t. the scaled network input
 _C.MODEL.RPN.ANCHOR_SIZES = (32, 64, 128, 256, 512)
 # Stride of the feature map that RPN is attached.
+# maskrcnn-benchmark/maskrcnn_benchmark/modeling/rpn/anchor_generator.py
 # For FPN, number of strides should match number of scales
 _C.MODEL.RPN.ANCHOR_STRIDE = (16,)
 # RPN anchor aspect ratios
@@ -157,7 +158,9 @@ _C.MODEL.RPN.BG_IOU_THRESHOLD = 0.3
 # Total number of RPN examples per image
 _C.MODEL.RPN.BATCH_SIZE_PER_IMAGE = 256
 # Target fraction of foreground (positive) examples per RPN minibatch
+#If there are fewer than 128 positive samples in an image, we pad the mini-batch with negative ones
 _C.MODEL.RPN.POSITIVE_FRACTION = 0.5
+
 # Number of top scoring RPN proposals to keep before applying NMS
 # When FPN is used, this is *per FPN level* (not total)
 _C.MODEL.RPN.PRE_NMS_TOP_N_TRAIN = 12000
