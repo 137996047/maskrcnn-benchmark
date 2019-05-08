@@ -39,7 +39,8 @@ _C.MODEL.WEIGHT = ""
 # INPUT
 # -----------------------------------------------------------------------------
 _C.INPUT = CN()
-# Size of the smallest side of the image during training
+# Size of the smallest side of the image during training  
+# In maskrcnn-benchmark/maskrcnn_benchmark/data/transforms/build.py function: T.Resize(min_size, max_size)
 _C.INPUT.MIN_SIZE_TRAIN = (800,)  # (800,)
 # Maximum size of the side of the image during training
 _C.INPUT.MAX_SIZE_TRAIN = 1333
