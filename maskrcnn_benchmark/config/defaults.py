@@ -140,6 +140,7 @@ _C.MODEL.RPN.USE_FPN = False
 _C.MODEL.RPN.ANCHOR_SIZES = (32, 64, 128, 256, 512)
 # Stride of the feature map that RPN is attached.
 # maskrcnn-benchmark/maskrcnn_benchmark/modeling/rpn/anchor_generator.py
+#For FPN, the backbone already includes res5 (in mask rcnn paper)
 # For FPN, number of strides should match number of scales
 _C.MODEL.RPN.ANCHOR_STRIDE = (16,)
 # RPN anchor aspect ratios
