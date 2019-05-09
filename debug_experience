@@ -7,6 +7,18 @@
   
   【延伸】lr 和 batch size 的关系一般是：batch size 越大 lr 越大， 成线性关系。
  
-3、
-  
-  
+3、出现错误
+393| File "/nfs/project/donghailin_i/sign/anaconda3/envs/mb/lib/python3.7/http/client.py", line 447, in read
+394| n = self.readinto(b)
+395| File "/nfs/project/donghailin_i/sign/anaconda3/envs/mb/lib/python3.7/http/client.py", line 491, in readinto
+396| n = self.fp.readinto(b)
+397| File "/nfs/project/donghailin_i/sign/anaconda3/envs/mb/lib/python3.7/socket.py", line 589, in readinto
+398| return self._sock.recv_into(b)
+399| File "/nfs/project/donghailin_i/sign/anaconda3/envs/mb/lib/python3.7/ssl.py", line 1052, in recv_into
+400| return self.read(nbytes, buffer)
+401| File "/nfs/project/donghailin_i/sign/anaconda3/envs/mb/lib/python3.7/ssl.py", line 911, in read
+402| return self._sslobj.read(len, buffer)
+403| ConnectionResetError: [Errno 104] Connection reset by peer
+413| subprocess.CalledProcessError: Command '['/nfs/project/donghailin_i/sign/anaconda3/envs/mb/bin/python', '-u', './tools/train_net.py', '--local_rank=0', '--config-file', '/nfs/project/donghailin_i/sign/maskrcnn-benchmark/configs/e2e_faster_rcnn_R_101_FPN_1x_sign.yaml', 'MODEL.RPN.FPN_POST_NMS_TOP_N_TRAIN', '1000']' returned non-zero exit status 1.
+
+这个是下载模型的时候，连接超时，可以自己先将模型下载到指定的位置，然后在跑模型（注意：如果用的是离线任务，需要在重新生成一个镜像才可以用。）
