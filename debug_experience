@@ -1,0 +1,12 @@
+
+1、出现 loss_box_reg 一直为0：
+  loss_box_reg 没有正样本进入，所以一直为0, 降低ROI_HEADS.FG_IOU_THRESHOLD的阈值。
+  
+2、出现loss: nan (nan)  loss_classifier: nan (nan)  loss_box_reg: nan (nan)
+  降低 lr 的值, and it worked.
+  
+  【延伸】lr 和 batch size 的关系一般是：batch size 越大 lr 越大， 成线性关系。
+ 
+3、
+  
+  
