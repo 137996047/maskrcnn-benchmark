@@ -24,3 +24,8 @@
 413| subprocess.CalledProcessError: Command '['/nfs/project/donghailin_i/sign/anaconda3/envs/mb/bin/python', '-u', './tools/train_net.py', '--local_rank=0', '--config-file', '/nfs/project/donghailin_i/sign/maskrcnn-benchmark/configs/e2e_faster_rcnn_R_101_FPN_1x_sign.yaml', 'MODEL.RPN.FPN_POST_NMS_TOP_N_TRAIN', '1000']' returned non-zero exit status 1.
 
 这个是下载模型的时候，连接超时，可以自己先将模型下载到指定的位置，然后在跑模型（注意：如果用的是离线任务，需要在重新生成一个镜像才可以用。）
+
+4. 如果用离线任务，在maskrcnn-benchmark 下创建文件夹shs，将.sh文件放到里面跑，需要注意哪些点？
+    a. 直行train_net.py 路径需要修改
+    b. datasets路径也需要改, 估计还有其他路径要改，所以先不建议创建shs文件夹，先就在maskrcnn-benchmark 文件下创建.sh跑吧。
+
