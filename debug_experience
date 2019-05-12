@@ -30,5 +30,5 @@
     b. datasets路径也需要改, 估计还有其他路径要改，所以先不建议创建shs文件夹，先就在maskrcnn-benchmark 文件下创建.sh跑吧。
 
 5. 想可视化loss,用tensorboard的。
- 目前可以参考这个人写的代码https://github.com/facebookresearch/maskrcnn-benchmark/pull/163
+ 目前可以拷贝这个人写的代码https://github.com/facebookresearch/maskrcnn-benchmark/pull/163
  以后支持pytorch1.1之后估计可以直接用了。
