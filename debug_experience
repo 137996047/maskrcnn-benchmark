@@ -42,5 +42,5 @@
 
 7.如果想自定义coco_eval中APt, t = 0.5, 0.75 or the threshold you want to set.
   在https://github.com/cocodataset/cocoapi/blob/master/PythonAPI/pycocotools/cocoeval.py 这个文件中（自己电脑上的文件cocoeval.py），461行下面加上自己的代码。
-  然后在PythonAPI 文件下执行 make， 重新编译一遍即可。
+  然后在PythonAPI 文件下执行 python setup.py develop， 重新编译一遍即可。
   
