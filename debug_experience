@@ -32,3 +32,15 @@
 5. 想可视化loss,用tensorboard的。
  目前可以拷贝这个人写的代码https://github.com/facebookresearch/maskrcnn-benchmark/pull/163
  以后支持pytorch1.1之后估计可以直接用了。
+
+6.在.sh中执行 conda activate mb 出现错误：CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+   https://github.com/conda/conda/issues/7980
+   
+   原因：Functions are not exported by default to be made available in subshells. I'd recommend you do:
+   source ~/anaconda3/etc/profile.d/conda.sh
+   conda activate my_env
+
+7.如果想自定义coco_eval中APt, t = 0.5, 0.75 or the threshold you want to set.
+  在https://github.com/cocodataset/cocoapi/blob/master/PythonAPI/pycocotools/cocoeval.py 这个文件中（自己电脑上的文件cocoeval.py），461行下面加上自己的代码。
+  然后在PythonAPI 文件下执行 make， 重新编译一遍即可。
+  
