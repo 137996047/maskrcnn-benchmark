@@ -43,4 +43,12 @@
 7.如果想自定义coco_eval中APt, t = 0.5, 0.75 or the threshold you want to set.
   在https://github.com/cocodataset/cocoapi/blob/master/PythonAPI/pycocotools/cocoeval.py 这个文件中（自己电脑上的文件cocoeval.py），461行下面加上自己的代码。
   然后在PythonAPI 文件下执行 python setup.py develop， 重新编译一遍即可。
+ 
+8.重新定义cocopai中的IoU阈值为0.9时输出结果mAP结果，但是会输出出来-1。
+  这应该是python机制的问题代码的中0.9有可能是0.8999999这样的形式,在代码中加上这样的条件即可：
+  if iouThr == 0.9:
+        s = s[[8]]
+  else:
+        ...
+  
   
